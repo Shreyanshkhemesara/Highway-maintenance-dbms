@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Company | view </title>
+    <link rel="stylesheet" href="./views/style.css">
+</head>
+<body>
+  <%- include("./nav.ejs") %>
+    <div class="container">
+        <table class="table">
+          <!-- <thead class="bg-primary"> -->
+            <tr>
+              <th scope="col">GST number</th>
+              <th scope="col">Company name</th>
+              <th scope="col">Government</th>
+              <th scope="col">Start</th>
+              <th scope="col">End</th>
+              <th scope="col">Material</th>
+              <th scope="col">Maintenance time</th>
+            </tr>
+        </table>
+      </div>    
+</body>
+
+<script>
+    var data = <%- JSON.stringify(data) %>;
+    console.log('here')
+    data.rows.forEach(row => {
+        
+        table += `<tr>
+            <td scope="col">${row.gst_num}</th>
+            <td scope="col">${row.company_name}</th>
+            <td scope="col">${row.government}</th>
+            <td scope="col">${row.date_start}</th>
+            <td scope="col">${row.date_end}</th>      
+            <td scope="col">${row.material}</th>      
+            <td scope="col">${row.maintenance_time}</th>      
+            </tr>`
+        });
+        document.querySelector('.table').innerHTML += table
+        var table = ``;
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./views/style.css">
+    <title>Highway | highways</title>
+</head>
+<body>
+  <%- include("./nav.ejs") %>
+    <div class="container">
+        <table class="table">
+            <tr>
+              <th scope="col">NH-id</th>
+              <th scope="col">Highway Length</th>
+              <th scope="col">City Name</th>
+              <th scope="col">Year</th>
+              <th scope="col">Status</th>
+            </tr>
+        </table>
+      </div>    
+</body>
+
+<script>
+    var data = <%- JSON.stringify(data) %>;
+    console.log('here')
+    data.rows.forEach(row => {
+        
+        table += `<tr>
+            <td scope="col">${row.nh_id}</th>
+            <td scope="col">${row.length}</th>
+            <td scope="col">${row.city_name}</th>
+            <td scope="col">${row.year}</th>
+            <td scope="col">${row.status}</th>      
+            </tr>`
+        });
+        document.querySelector('.table').innerHTML += table
+        var table = ``;
+</script>
+</html>

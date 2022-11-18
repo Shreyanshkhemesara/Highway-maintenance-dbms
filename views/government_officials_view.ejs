@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Users</title>
+    <link rel="stylesheet" href="/css/products.css" />
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+        crossorigin="anonymous"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+  <%- include("./nav.ejs") %>
+
+    <div class="container-fluid w-75">
+        <table class="table">
+          <thead class="bg-primary">
+            <tr>
+              <th scope="col">Aadhar number</th>
+              <th scope="col">First_name</th>
+              <th scope="col">Last_name</th>
+              <th scope="col">Email_id</th>
+              <th scope="col">Phone-number</th>
+            </tr>
+          </thead>
+        </table>
+      </div>    
+</body>
+
+<script>
+    var data = <%- JSON.stringify(data) %>;
+    console.log('here')
+    data.rows.forEach(row => {
+        
+        table += `<tr>
+            <td scope="col">${row.aadhar_no}</td>
+            <td scope="col">${row.first_name}</td>
+            <td scope="col">${row.last_name}</td>
+            <td scope="col">${row.email_id}</td>
+            <td scope="col">${row.phone_no}</td>
+            </tr>`
+        });
+        document.querySelector('.table').innerHTML += table
+        var table = ``;
+</script>
+</html>
