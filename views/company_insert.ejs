@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert | Citizen</title>
+  </head>
+  <body>
+    <%- include("./nav.ejs") %>
+
+    <form method="POST" action="/company_inserted">
+      <label for="gst_num">GST_num</label><br />
+      <input type="text" id="gst_num" name="gst_num" /><br />
+      <label for="company_name">company_name</label><br />
+      <input type="text" id="company_name" name="company_name" /><br />
+      <label for="government">government</label><br />
+      <input type="text" id="government" name="government" /><br />
+      <label for="date_start">date_start</label><br />
+      <input type="text" id="date_start" name="date_start" /><br />
+      <label for="date_end">date_end</label><br />
+      <input type="text" id="date_end" name="date_end" /><br />
+      <label for="material">material</label><br />
+      <input type="text" id="material" name="material" /><br />
+      <label for="maintenance_time">maintenance_time</label><br />
+      <input type="text" id="maintenance_time" name="maintenance_time" /><br />
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>

@@ -20,7 +20,8 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
     />
-</head>
+</head>    <link rel="stylesheet" href="./views/style.css">
+
 <body>
   <%- include("./nav.ejs") %>
 
@@ -28,8 +29,8 @@
         <table class="table">
           <thead class="bg-primary">
             <tr>
-              <th scope="col">State-Name</th>
-              <th scope="col">number</th>
+              <th scope="col">NH-id</th>
+              <th scope="col">GST_num</th>
             </tr>
           </thead>
         </table>
@@ -42,8 +43,8 @@
     data.rows.forEach(row => {
         
         table += `<tr>
-            <td scope="col">${row.state_name}</td>
-            <td scope="col">${row.number}</td>     
+            <td scope="col">${row.nh_id}</td>
+            <td scope="col">${row.gst_num}</td>    
             </tr>`
         });
         document.querySelector('.table').innerHTML += table

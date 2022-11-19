@@ -22,14 +22,12 @@
     />
 </head>
 <body>
-  <%- include("./nav.ejs") %>
-
     <div class="container-fluid w-75">
         <table class="table">
           <thead class="bg-primary">
             <tr>
-              <th scope="col">NH-id</th>
-              <th scope="col">GST_num</th>
+              <th scope="col">City Name</th>
+              <th scope="col">State Name</th>
             </tr>
           </thead>
         </table>
@@ -42,8 +40,8 @@
     data.rows.forEach(row => {
         
         table += `<tr>
-            <td scope="col">${row.nh_id}</td>
-            <td scope="col">${row.gst_num}</td>    
+            <td scope="col">${row.city_name}</td>
+            <td scope="col">${row.state_name}</td>    
             </tr>`
         });
         document.querySelector('.table').innerHTML += table

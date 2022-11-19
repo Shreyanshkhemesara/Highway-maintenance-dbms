@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert | Citizen</title>
+  </head>
+  <body>
+    <%- include("./nav.ejs") %>
+
+    <form method="POST" action="/issues_inserted">
+      <label for="nh_id">NH-id</label><br />
+      <input type="text" id="nh_id" name="nh_id" /><br />
+      <label for="name">Issue-name</label><br />
+      <input type="text" id="name" name="name" /><br />
+      <label for="repair_cost">Repair cost</label><br />
+      <input type="text" id="repair_cost" name="repair_cost" /><br />
+      
+      <input type="submit" value="submit" />
+    </form>
+  </body>
+</html>
